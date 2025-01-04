@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Center the form */
+        form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            form {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            input, select, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+
+
+</head>
+<body>
+    
+    <form action="result/" method="post">
+        {% csrf_token %}
+        <h1>Simple Calculator</h1>
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1" required><br><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2" required><br><br>
+
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation" required>
+            <option value="add">Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiplication">multiplication</option>
+            <option value="divisibleby">divide</option>
+
+        </select><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
